@@ -1,0 +1,1680 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charieza Morales | Personal Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #07070b;
+        --ink: #f4efe6;
+        --dim: #bcb6ab;
+        --mute: #8b867d;
+        --line: rgba(244, 239, 230, 0.12);
+        --blue: #0e3e92;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Outfit", sans-serif;
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      button {
+        font-family: inherit;
+      }
+
+      .background {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+        background-size: 76px 76px;
+        mask-image: radial-gradient(ellipse at top, black, transparent 78%);
+      }
+
+      .glow {
+        position: absolute;
+        width: 44rem;
+        height: 44rem;
+        border-radius: 50%;
+        filter: blur(110px);
+        opacity: 0.4;
+      }
+
+      .glow1 {
+        top: -25rem;
+        left: -18rem;
+        background: rgba(37, 99, 235, 0.95);
+        animation: drift 18s infinite ease-in-out;
+      }
+
+      .glow2 {
+        top: 18%;
+        right: -28rem;
+        background: rgba(56, 189, 248, 0.5);
+        animation: drift 24s infinite ease-in-out reverse;
+      }
+
+      .glow3 {
+        bottom: -35rem;
+        left: 20%;
+        background: rgba(120, 113, 108, 0.32);
+        animation: drift 28s infinite ease-in-out;
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(4rem, 3rem) scale(1.12);
+        }
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 80px));
+        margin: auto;
+      }
+
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+
+      .serif {
+        font-family: "Instrument Serif", serif;
+      }
+
+      section {
+        padding: 110px 0;
+        border-top: 1px solid rgba(244, 239, 230, 0.05);
+        scroll-margin-top: 75px;
+      }
+
+      .section-label {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: var(--mute);
+        font-size: 0.68rem;
+      }
+
+      .section-label::before {
+        content: "";
+        width: 38px;
+        height: 1px;
+        background: var(--line);
+      }
+
+      .section-number {
+        font:
+          1.8rem "Instrument Serif",
+          serif;
+        color: var(--dim);
+        letter-spacing: 0;
+      }
+
+      .section-title {
+        font:
+          400 clamp(2.25rem, 5vw, 3.75rem)/1.05 "Instrument Serif",
+          serif;
+        margin: 12px 0;
+      }
+
+      .lead {
+        max-width: 44rem;
+        color: var(--dim);
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 72px;
+        z-index: 100;
+        transition: 0.3s;
+      }
+
+      header.scrolled {
+        background: rgba(7, 7, 11, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        max-width: 1280px;
+        height: 100%;
+        margin: auto;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-name {
+        font:
+          1.55rem "Instrument Serif",
+          serif;
+      }
+
+      .brand-divider {
+        width: 1px;
+        height: 22px;
+        background: var(--line);
+      }
+
+      .brand-sub {
+        color: var(--mute);
+        font-size: 0.58rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+        margin-left: auto;
+      }
+
+      .nav-links a {
+        color: #a8a29a;
+        font-size: 0.88rem;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, white, transparent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .hello {
+        border: 1px solid var(--line);
+        background: rgba(244, 239, 230, 0.05);
+        border-radius: 50px;
+        padding: 8px 16px;
+        font-size: 0.82rem;
+      }
+
+      .menu-toggle {
+        display: none;
+        background: transparent;
+        color: white;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .mobile-menu {
+        display: none;
+        background: rgba(7, 7, 11, 0.97);
+        padding: 15px 25px;
+      }
+
+      .mobile-menu.open {
+        display: block;
+      }
+
+      .mobile-menu a {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        color: var(--dim);
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 130px 20px 75px;
+        position: relative;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 15px;
+        border: 1px solid rgba(169, 200, 255, 0.24);
+        background: rgba(59, 130, 246, 0.08);
+        border-radius: 50px;
+        color: #c3d9ff;
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #7fb0ff;
+        box-shadow: 0 0 10px #7fb0ff;
+        animation: blink 2.6s infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0.25;
+        }
+      }
+
+      .hero h1 {
+        margin: 25px 0 5px;
+        font:
+          800 clamp(2.1rem, 6.4vw, 4.4rem)/1.12 "Sora",
+          sans-serif;
+        letter-spacing: -0.05em;
+        background: linear-gradient(
+          96deg,
+          white,
+          #c7dcfb 26%,
+          #4d8dff 50%,
+          #a9c8ff 72%,
+          white
+        );
+        background-size: 230% 100%;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: shine 11s infinite alternate;
+      }
+
+      @keyframes shine {
+        to {
+          background-position: 100%;
+        }
+      }
+
+      .hero-meta {
+        color: var(--mute);
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        margin: 8px 0 18px;
+      }
+
+      .hero-meta span {
+        color: #55515a;
+        padding: 0 8px;
+      }
+
+      .hero-description {
+        max-width: 36rem;
+        color: var(--dim);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .btn {
+        padding: 12px 23px;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        transition: 0.25s;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .primary-btn {
+        background: linear-gradient(120deg, #1f4fd8, #3b82f6, #6ba5ff);
+        border: 1px solid rgba(169, 200, 255, 0.4);
+        color: white;
+        box-shadow: 0 8px 30px rgba(31, 79, 216, 0.22);
+      }
+
+      .ghost-btn {
+        border: 1px solid rgba(244, 239, 230, 0.2);
+        color: #eae5dc;
+      }
+
+      .avatar {
+        width: 240px;
+        height: 240px;
+        margin-top: 48px;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+
+      .avatar-glow {
+        position: absolute;
+        inset: 8%;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.55),
+          transparent 66%
+        );
+        filter: blur(32px);
+        animation: pulse 6.5s infinite;
+      }
+
+      @keyframes pulse {
+        50% {
+          opacity: 0.95;
+          transform: scale(1.06);
+        }
+      }
+
+      .avatar-frame {
+        width: 78%;
+        height: 78%;
+        padding: 4px;
+        border-radius: 50%;
+        background: conic-gradient(
+          #1f4fd8,
+          #7fb0ff,
+          #f4efe6,
+          #1e3a8a,
+          #4d8dff,
+          #1f4fd8
+        );
+        animation: spin 18s linear infinite;
+        z-index: 1;
+      }
+
+      .avatar-photo {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #171923;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        animation: spin 18s linear infinite reverse;
+      }
+
+      .avatar-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .initials {
+        font:
+          4rem "Instrument Serif",
+          serif;
+        color: #a9c8ff;
+      }
+
+      .avatar-ring {
+        position: absolute;
+        inset: -25px;
+        border: 1px dashed rgba(169, 200, 255, 0.22);
+        border-radius: 50%;
+        animation: spin 34s linear infinite reverse;
+      }
+
+      .avatar-ring::after {
+        content: "";
+        position: absolute;
+        top: 12%;
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #a9c8ff;
+        box-shadow: 0 0 12px #4d8dff;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .float-badge {
+        position: absolute;
+        padding: 7px 11px;
+        border: 1px solid rgba(169, 200, 255, 0.22);
+        background: rgba(9, 9, 14, 0.85);
+        border-radius: 50px;
+        color: #dbeafe;
+        font-size: 0.7rem;
+        animation: floating 7s infinite ease-in-out;
+      }
+
+      .float-badge i {
+        color: #a9c8ff;
+      }
+
+      .badge1 {
+        top: 15%;
+        left: -35%;
+      }
+      .badge2 {
+        top: 45%;
+        right: -38%;
+        animation-delay: 1.4s;
+      }
+      .badge3 {
+        bottom: 12%;
+        left: -28%;
+        animation-delay: 2.8s;
+      }
+
+      @keyframes floating {
+        50% {
+          transform: translateY(-9px);
+        }
+      }
+
+      .marquee {
+        overflow: hidden;
+        border-block: 1px solid rgba(244, 239, 230, 0.1);
+        padding: 17px 0;
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          #000 8%,
+          #000 92%,
+          transparent
+        );
+      }
+
+      .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 32s linear infinite;
+      }
+
+      .marquee-group {
+        display: flex;
+        flex-shrink: 0;
+      }
+
+      .marquee span {
+        padding: 0 25px;
+        color: var(--mute);
+        font:
+          0.68rem "JetBrains Mono",
+          monospace;
+        letter-spacing: 0.2em;
+        white-space: nowrap;
+      }
+
+      @keyframes marquee {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .fact {
+        padding: 16px;
+        border: 1px solid rgba(244, 239, 230, 0.1);
+        background: rgba(244, 239, 230, 0.03);
+        border-radius: 16px;
+      }
+
+      .fact small {
+        display: block;
+        color: var(--mute);
+        font-size: 0.65rem;
+      }
+
+      .fact strong {
+        font-weight: 500;
+      }
+
+      .card {
+        border: 1px solid rgba(244, 239, 230, 0.13);
+        border-radius: 20px;
+        background: linear-gradient(
+          145deg,
+          rgba(244, 239, 230, 0.05),
+          rgba(244, 239, 230, 0.012)
+        );
+        backdrop-filter: blur(8px);
+        transition: 0.35s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(244, 239, 230, 0.32);
+      }
+
+      .about-card {
+        padding: 32px;
+      }
+
+      .quote {
+        font:
+          4rem "Instrument Serif",
+          serif;
+        color: #77716a;
+      }
+
+      .about-card p {
+        color: var(--dim);
+        margin: 15px 0;
+      }
+
+      .about-card strong {
+        color: var(--ink);
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
+      .motto {
+        border-left: 1px solid rgba(244, 239, 230, 0.35);
+        padding-left: 16px;
+        margin: 22px 0;
+        font:
+          italic 1.35rem "Instrument Serif",
+          serif;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 22px 0;
+      }
+
+      .chip {
+        padding: 5px 11px;
+        border: 1px solid var(--line);
+        border-radius: 50px;
+        color: var(--dim);
+        font-size: 0.7rem;
+      }
+
+      .contact {
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--mute);
+        font-size: 0.78rem;
+      }
+
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 30px;
+        margin-bottom: 32px;
+      }
+
+      .side-description {
+        max-width: 330px;
+        text-align: right;
+        color: var(--dim);
+      }
+
+      .hobbies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .hobby-card {
+        padding: 25px;
+        min-height: 220px;
+      }
+
+      .hobby-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .icon-box {
+        width: 48px;
+        height: 48px;
+        border: 1px solid rgba(244, 239, 230, 0.18);
+        background: rgba(244, 239, 230, 0.05);
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font-size: 21px;
+        transition: 0.35s;
+      }
+
+      .hobby-card:hover .icon-box,
+      .resource-card:hover .icon-box {
+        background: var(--ink);
+        color: var(--bg);
+        transform: rotate(6deg);
+      }
+
+      .hobby-card h3 {
+        font:
+          1.8rem "Instrument Serif",
+          serif;
+        margin: 23px 0 5px;
+        font-weight: 400;
+      }
+
+      .hobby-card p {
+        color: var(--dim);
+        font-size: 0.9rem;
+      }
+
+      .goals-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 5rem;
+      }
+
+      .sticky-content {
+        position: sticky;
+        top: 110px;
+        align-self: start;
+      }
+
+      .note {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 13px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        color: var(--dim);
+        font-size: 0.75rem;
+        margin-top: 25px;
+      }
+
+      .goal {
+        display: grid;
+        grid-template-columns: 75px 1fr;
+        gap: 20px;
+        padding: 28px 0;
+        border-top: 1px solid rgba(244, 239, 230, 0.15);
+        transition: 0.3s;
+      }
+
+      .goal:hover {
+        border-color: rgba(244, 239, 230, 0.42);
+      }
+
+      .goal-number {
+        font:
+          2.9rem "Instrument Serif",
+          serif;
+        color: rgba(244, 239, 230, 0.22);
+        transition: 0.3s;
+      }
+
+      .goal:hover .goal-number {
+        color: rgba(244, 239, 230, 0.9);
+      }
+
+      .goal small {
+        color: var(--mute);
+        font-size: 0.65rem;
+        letter-spacing: 0.16em;
+      }
+
+      .goal h3 {
+        font:
+          1.65rem "Instrument Serif",
+          serif;
+        font-weight: 400;
+      }
+
+      .goal p {
+        color: var(--dim);
+        font-size: 0.9rem;
+      }
+      .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 32px;
+      }
+
+      .resource-card {
+        padding: 22px;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+      }
+
+      .resource-details {
+        flex: 1;
+      }
+
+      .resource-details h3 {
+        font:
+          1.55rem "Instrument Serif",
+          serif;
+        font-weight: 400;
+      }
+
+      .resource-details small {
+        color: var(--mute);
+      }
+
+      .resource-details p {
+        color: var(--dim);
+        font-size: 0.82rem;
+      }
+
+      .arrow {
+        font-size: 20px;
+        color: var(--dim);
+        transition: 0.25s;
+      }
+
+      .resource-card:hover .arrow {
+        transform: translate(3px, -3px);
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+        margin-top: 30px;
+        border: 1px solid rgba(244, 239, 230, 0.28);
+        border-radius: 12px;
+      }
+
+      table {
+        width: 100%;
+        min-width: 620px;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      caption {
+        text-align: left;
+        padding: 16px;
+        color: var(--mute);
+        font:
+          0.65rem "JetBrains Mono",
+          monospace;
+      }
+
+      th,
+      td {
+        padding: 15px 18px;
+        border: 1px solid rgba(244, 239, 230, 0.18);
+      }
+
+      th {
+        background: rgba(244, 239, 230, 0.04);
+        font:
+          500 0.8rem "Sora",
+          sans-serif;
+      }
+
+      td {
+        color: var(--dim);
+        font-size: 0.88rem;
+      }
+
+      td:first-child {
+        color: var(--ink);
+      }
+
+      tbody tr:hover {
+        background: rgba(244, 239, 230, 0.03);
+      }
+
+      .last-row {
+        text-align: center;
+        color: var(--mute);
+        font-style: italic;
+      }
+
+      footer {
+        border-top: 1px solid rgba(244, 239, 230, 0.1);
+        background: rgba(7, 7, 11, 0.6);
+        padding: 55px 0 25px;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+      }
+
+      .brand-chip {
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        font:
+          1.5rem "Instrument Serif",
+          serif;
+      }
+
+      .footer-description {
+        max-width: 360px;
+        color: var(--mute);
+        font-size: 0.82rem;
+        margin-top: 16px;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: var(--dim);
+        font-size: 0.82rem;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid var(--line);
+        margin-top: 35px;
+        padding-top: 20px;
+        color: var(--mute);
+        font-size: 0.72rem;
+      }
+
+      .back-top {
+        padding: 8px 14px;
+        border: 1px solid var(--line);
+        border-radius: 50px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.85s ease,
+          transform 0.85s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1024px) {
+        .about-grid,
+        .goals-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .sticky-content {
+          position: static;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .container {
+          width: calc(100% - 44px);
+        }
+
+        .nav {
+          padding: 0 22px;
+        }
+
+        .nav-links,
+        .hello {
+          display: none;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        section {
+          padding: 80px 0;
+        }
+
+        .section-heading {
+          display: block;
+        }
+
+        .side-description {
+          text-align: left;
+          margin-top: 15px;
+        }
+
+        .footer-top,
+        .footer-bottom {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 639px) {
+        .hero h1 {
+          font-size: clamp(2rem, 10vw, 3.2rem);
+        }
+
+        .hero-buttons {
+          width: 100%;
+          flex-direction: column;
+        }
+
+        .btn {
+          justify-content: center;
+        }
+
+        .avatar {
+          width: 192px;
+          height: 192px;
+        }
+
+        .float-badge {
+          display: none;
+        }
+
+        .facts,
+        .hobbies-grid,
+        .resources-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-card {
+          padding: 23px;
+        }
+
+        .goal {
+          grid-template-columns: 48px 1fr;
+          gap: 12px;
+        }
+
+        .goal-number {
+          font-size: 2.1rem;
+        }
+
+        .glow {
+          width: 30rem;
+          height: 30rem;
+          filter: blur(85px);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+
+        html {
+          scroll-behavior: auto;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="grid"></div>
+      <div class="glow glow1"></div>
+      <div class="glow glow2"></div>
+      <div class="glow glow3"></div>
+    </div>
+
+    <header id="header">
+      <nav class="nav">
+        <a href="#top" class="brand">
+          <span class="brand-name">morie</span>
+          <span class="brand-divider"></span>
+          <span class="brand-sub mono">PERSONAL PROFILE</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#hobbies">Interests</a>
+          <a href="#goals">Goals</a>
+          <a href="#resources">Resources</a>
+          <a href="#toolkit">Toolkit</a>
+        </div>
+
+        <a href="mailto:charieza.morales@holycross.edu.ph" class="hello">
+          <i class="ri-mail-line"></i> Say hello
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <i class="ri-menu-line"></i>
+        </button>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About Me <i class="ri-arrow-right-up-line"></i></a>
+        <a href="#hobbies">Interests <i class="ri-arrow-right-up-line"></i></a>
+        <a href="#goals"
+          >Learning Goals <i class="ri-arrow-right-up-line"></i
+        ></a>
+        <a href="#resources"
+          >Resources <i class="ri-arrow-right-up-line"></i
+        ></a>
+        <a href="#toolkit">Toolkit <i class="ri-arrow-right-up-line"></i></a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="eyebrow mono">
+          <span class="dot"></span>
+          Laboratory Activity 01 — Personal Profile
+        </div>
+
+        <h1>MORALES, CHARIEZA</h1>
+
+        <p class="hero-meta mono">
+          BS COMPUTER SCIENCE <span>/</span> 1ST YEAR
+        </p>
+
+        <p class="hero-description">
+          A first year CS student who spends free afternoons pushing pixels,
+          fixing broken layouts, and collecting small wins in HTML and CSS.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#about" class="btn primary-btn">
+            <i class="ri-user-line"></i>
+            Know more about me
+          </a>
+
+          <a href="#goals" class="btn ghost-btn">
+            My learning goals
+            <i class="ri-arrow-down-line"></i>
+          </a>
+        </div>
+
+        <div class="avatar">
+          <div class="avatar-glow"></div>
+          <div class="avatar-ring"></div>
+
+          <div class="avatar-frame">
+            <div class="avatar-photo">
+              <img
+                src="profile.jpg.jpg"
+                alt="My Photo"
+                class="profile.jpg.jpg"
+              />
+            </div>
+          </div>
+
+          <div class="float-badge badge1">
+            <i class="ri-code-s-slash-line"></i> HTML · CSS
+          </div>
+
+          <div class="float-badge badge2">
+            <i class="ri-graduation-cap-line"></i> 1st Year CS
+          </div>
+
+          <div class="float-badge badge3">
+            <i class="ri-map-pin-line"></i> Davao City
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee">
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <span>HTML ·</span>
+            <span>CSS ·</span>
+            <span>JAVA ·</span>
+            <span>JAVASCRIPT ·</span>
+            <span>STILL LEARNING ·</span>
+            <span>DAVAO CITY ·</span>
+            <span>BS COMPUTER SCIENCE ·</span>
+            <span>MORIE ·</span>
+          </div>
+
+          <div class="marquee-group" aria-hidden="true">
+            <span>HTML ·</span>
+            <span>CSS ·</span>
+            <span>JAVA ·</span>
+            <span>JAVASCRIPT ·</span>
+            <span>STILL LEARNING ·</span>
+            <span>DAVAO CITY ·</span>
+            <span>BS COMPUTER SCIENCE ·</span>
+            <span>MORIE ·</span>
+          </div>
+        </div>
+      </div>
+
+      <section id="about">
+        <div class="container about-grid">
+          <div class="reveal">
+            <div class="section-label mono">
+              <span class="section-number">01</span>
+              ABOUT ME
+            </div>
+
+            <h2 class="section-title">About Me</h2>
+
+            <p class="lead">
+              I am a first-year Bachelor of Science in Computer Science student.
+              I enjoy learning new things and exploring how technology works,
+              especially when I can create something on my own.
+            </p>
+
+            <div class="facts">
+              <div class="fact">
+                <small><i class="ri-graduation-cap-line"></i> COURSE</small>
+                <strong>BS Computer Science</strong>
+              </div>
+
+              <div class="fact">
+                <small><i class="ri-book-open-line"></i> YEAR LEVEL</small>
+                <strong>1st Year</strong>
+              </div>
+
+              <div class="fact">
+                <small><i class="ri-map-pin-line"></i> LOCATION</small>
+                <strong>Davao City</strong>
+              </div>
+
+              <div class="fact">
+                <small><i class="ri-code-line"></i> SKILLS</small>
+                <strong>HTML and CSS basics</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="card about-card reveal">
+            <div class="quote">“</div>
+
+            <p>
+              I am still learning and discovering what I can do in the field of
+              technology. I know that there are many things I need to improve,
+              but I am willing to learn and practice step by step.
+            </p>
+
+            <p>
+              As a Computer Science student, I am exploring
+              <strong>basic coding in HTML and CSS</strong>
+              and learning how websites are created. My goal is to become a
+              knowledgeable programmer who can build useful projects.
+            </p>
+
+            <div class="motto">Learn step by step, improve every day.</div>
+
+            <div class="chips">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">Java</span>
+              <span class="chip">JavaScript · Currently Learning</span>
+            </div>
+
+            <div class="contact">
+              <a href="mailto:charieza.morales@holycross.edu.ph">
+                <i class="ri-mail-line"></i>
+                charieza.morales@holycross.edu.ph
+              </a>
+              <span>·</span>
+              <span>Holy Cross Of DavaoCollege</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="hobbies">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <div class="section-label mono">
+                <span class="section-number">02</span>
+                INTERESTS
+              </div>
+
+              <h2 class="section-title">My Interests</h2>
+            </div>
+
+            <p class="side-description">
+              These are some simple things I enjoy doing during my free time.
+              They help me relax and keep myself curious.
+            </p>
+          </div>
+
+          <div class="hobbies-grid">
+            <div class="card hobby-card reveal">
+              <div class="hobby-top">
+                <div class="icon-box"><i class="ri-lightbulb-line"></i></div>
+                <span class="mono">01</span>
+              </div>
+              <h3>Learning New Things</h3>
+              <p>
+                I like discovering new ideas and learning skills that can help
+                me grow.
+              </p>
+            </div>
+
+            <div class="card hobby-card reveal">
+              <div class="hobby-top">
+                <div class="icon-box"><i class="ri-book-open-line"></i></div>
+                <span class="mono">02</span>
+              </div>
+              <h3>Reading on Wattpad</h3>
+              <p>
+                Reading stories is one of the ways I enjoy my quiet and free
+                time, especially while listening to instrumental love music.
+              </p>
+            </div>
+
+            <div class="card hobby-card reveal">
+              <div class="hobby-top">
+                <div class="icon-box"><i class="ri-headphone-line"></i></div>
+                <span class="mono">03</span>
+              </div>
+              <h3>Making Playlists</h3>
+              <p>
+                I enjoy collecting songs that match my mood and listening to
+                music.
+              </p>
+            </div>
+
+            <div class="card hobby-card reveal">
+              <div class="hobby-top">
+                <div class="icon-box"><i class="ri-home-4-line"></i></div>
+                <span class="mono">04</span>
+              </div>
+              <h3>Staying at Home</h3>
+              <p>
+                I also enjoy staying at home, resting, and spending time at my
+                own pace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="goals">
+        <div class="container goals-grid">
+          <div class="sticky-content reveal">
+            <div class="section-label mono">
+              <span class="section-number">03</span>
+              DIRECTION
+            </div>
+
+            <h2 class="section-title">My Learning Goals</h2>
+
+            <p class="lead">
+              I want to improve little by little, become more confident in what
+              I learn, and use my knowledge to create my own projects.
+            </p>
+
+            <div class="note">
+              <i class="ri-flag-line"></i>
+              Reviewed every Sunday
+            </div>
+          </div>
+
+          <div>
+            <div class="goal reveal">
+              <div class="goal-number">01</div>
+              <div>
+                <small>PRIORITY 01</small>
+                <h3>Improve my programming skills</h3>
+                <p>
+                  Practice coding regularly and understand the basics of
+                  different programming languages.
+                </p>
+              </div>
+            </div>
+
+            <div class="goal reveal">
+              <div class="goal-number">02</div>
+              <div>
+                <small>PRIORITY 02</small>
+                <h3>Do well in my studies</h3>
+                <p>
+                  Manage my time, review my lessons, and complete school
+                  activities responsibly.
+                </p>
+              </div>
+            </div>
+
+            <div class="goal reveal">
+              <div class="goal-number">03</div>
+              <div>
+                <small>PRIORITY 03</small>
+                <h3>Create my own simple projects</h3>
+                <p>
+                  Apply what I learn by building small websites and programs as
+                  I gain more experience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resources">
+        <div class="container">
+          <div class="reveal">
+            <div class="section-label mono">
+              <span class="section-number">04</span>
+              RESOURCES
+            </div>
+
+            <h2 class="section-title">Learning Resources</h2>
+
+            <p class="lead">
+              These are two websites I use to study coding. Both links open in a
+              new tab, so I can keep this profile page open while learning.
+            </p>
+          </div>
+
+          <div class="resources-grid">
+            <a
+              href="https://www.w3schools.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card resource-card reveal"
+            >
+              <div class="icon-box">
+                <i class="ri-code-box-line"></i>
+              </div>
+
+              <div class="resource-details">
+                <h3>W3Schools</h3>
+                <small>w3schools.com</small>
+                <p>
+                  Helpful lessons and examples for learning HTML, CSS, and other
+                  coding topics.
+                </p>
+              </div>
+
+              <i class="ri-arrow-up-right-line arrow"></i>
+            </a>
+
+            <a
+              href="https://www.freecodecamp.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card resource-card reveal"
+            >
+              <div class="icon-box">
+                <i class="ri-graduation-cap-line"></i>
+              </div>
+
+              <div class="resource-details">
+                <h3>freeCodeCamp</h3>
+                <small>freecodecamp.org</small>
+                <p>
+                  Free coding lessons and practice activities for beginners.
+                </p>
+              </div>
+
+              <i class="ri-arrow-up-right-line arrow"></i>
+            </a>
+          </div>
+
+          <p class="lead" style="font-size: 0.78rem; margin-top: 18px">
+            These two resources are enough for me to keep practicing and
+            learning for now.
+          </p>
+        </div>
+      </section>
+
+      <section id="toolkit">
+        <div class="container">
+          <div class="reveal">
+            <div class="section-label mono">
+              <span class="section-number">05</span>
+              TOOLKIT
+            </div>
+
+            <h2 class="section-title">My Learning Toolkit</h2>
+
+            <p class="lead">
+              These are some tools and resources that support me while studying
+              and practicing computer-related skills.
+            </p>
+          </div>
+
+          <div class="table-wrapper reveal">
+            <table>
+              <caption>
+                TOOLS I USE WHILE LEARNING
+              </caption>
+
+              <thead>
+                <tr>
+                  <th>Tool</th>
+                  <th>What I use it for</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Visual Studio Code</td>
+                  <td>Writing and editing code</td>
+                  <td>Using daily</td>
+                </tr>
+
+                <tr>
+                  <td>Browser DevTools</td>
+                  <td>Checking and fixing webpage layouts</td>
+                  <td>Using daily</td>
+                </tr>
+
+                <tr>
+                  <td>W3Schools</td>
+                  <td>Reading coding lessons and examples</td>
+                  <td>Often</td>
+                </tr>
+
+                <tr>
+                  <td>freeCodeCamp</td>
+                  <td>Practicing coding skills</td>
+                  <td>Weekly</td>
+                </tr>
+
+                <tr>
+                  <td>Notebook and pen</td>
+                  <td>Writing notes and reminders</td>
+                  <td>Always</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="last-row">
+                    Take short breaks between class sessions.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand">
+              <span class="brand-chip">m</span>
+
+              <div>
+                <strong>Charieza Morales</strong>
+                <small class="mono"> BS COMPUTER SCIENCE · 1ST YEAR</small>
+              </div>
+            </div>
+
+            <p class="footer-description">
+              A personal profile created for Laboratory Activity 01, showing my
+              interests, learning goals, and journey as a Computer Science
+              student.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#hobbies">Interests</a>
+            <a href="#goals">Goals</a>
+            <a href="#resources">Resources</a>
+            <a href="#toolkit">Toolkit</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>
+            © <span id="year"></span> Charieza Morales · Laboratory Activity 01
+          </span>
+
+          <a href="#top" class="back-top"> Back to top ↑ </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById("header");
+
+      window.addEventListener("scroll", function () {
+        header.classList.toggle("scrolled", window.scrollY > 12);
+      });
+
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuToggle.addEventListener("click", function () {
+        const isOpen = mobileMenu.classList.toggle("open");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+
+        menuToggle.innerHTML = isOpen
+          ? '<i class="ri-close-line"></i>'
+          : '<i class="ri-menu-line"></i>';
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.innerHTML = '<i class="ri-menu-line"></i>';
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+        },
+      );
+
+      document.querySelectorAll(".reveal").forEach(function (element, index) {
+        element.style.transitionDelay = (index % 4) * 60 + "ms";
+
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>
